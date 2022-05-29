@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import ReactDOM from 'react-dom'; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -14,9 +13,10 @@ import PageNotFound from './Pages/PageNotFound';
 import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
+import Github from './Pages/GithubProfile';
 // react-router
 
-import{BrowserRouter as Router,Route,Routes,Link,Switch} from 'react-router-dom';
+import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 //toast stuff
 
@@ -50,6 +50,7 @@ const  App = () => {
        <Header/>
      <Routes>
      <Route exact path="/" element={<Home/>}/>
+     <Route exact path="/github" element={<Github/>}/>
        <Route exact  path="/signin" element={<Signin/>}/>
        <Route exact path="/signup" element={<Signup/>}/>
        <Route exact path="*" element={<PageNotFound/>}/>

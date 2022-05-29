@@ -10,7 +10,7 @@ const UserCard = ({user}) => {
                 <div className="text-success">No of Repos: <b>{user.public_repos}</b></div>
                 <div className="text-primary">Followers: {user.followers}</div>
                 <div className="text-primary">Follows: {user.following}</div>
-                <div className="text-primary">Bolg: {user.blog}</div>
+                <div className="text-primary">Bolg:<a href ={user.blog} target="_blank" rel="noopener noreferrer">{user.blog}</a> </div>
                 <div className="text-danger">Looking for job: <b>{user.hireable?'YES' :'NO'}</b></div>
             </CardBody>
        </Card>
