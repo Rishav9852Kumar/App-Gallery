@@ -10,10 +10,12 @@ import Signin from './Pages/Signin';
 import Signup from './Pages/Signup';
 import PageNotFound from './Pages/PageNotFound';
 
+
 import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Github from './Pages/GithubProfile';
+import News from './Pages/News';
 // react-router
 
 import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
@@ -53,6 +55,7 @@ const  App = () => {
      <Route exact path="/github" element={<Github/>}/>
        <Route exact  path="/signin" element={<Signin/>}/>
        <Route exact path="/signup" element={<Signup/>}/>
+       <Route exact path="news" element={<News/>}/>
        <Route exact path="*" element={<PageNotFound/>}/>
      </Routes>
      <Footer/> 

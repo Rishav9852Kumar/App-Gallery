@@ -39,6 +39,7 @@ const Github=()=>{
     }
     return (
         <Container className="mb-5">
+          <h3>Github Profile Generator </h3>
           <Row className=" mt-4">
             <Col md="5">
               <InputGroup>

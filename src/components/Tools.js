@@ -14,8 +14,8 @@ const Tools=({text,imgURL,link,desc})=>{
                    
                      />
              <CardBody>
-                 <CardTitle className="text-primary"><b>{text}</b></CardTitle>
-                 <CardText >{desc}</CardText>
+                 <CardTitle className="text-primary"><u><b>{text}</b></u></CardTitle>
+                 <CardText className="text-info">{desc}</CardText>
              </CardBody>
         </Card>
         </NavLink>
