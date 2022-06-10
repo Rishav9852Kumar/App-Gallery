@@ -22,21 +22,24 @@ const Header = () => {
     const toggle = () => setIsOpen(!isOpen);
     return(
         <Navbar color="info" light expand="md" >
+     
+      
         <NavbarBrand><Link to="/" className="text-white"
-        >LCO git fire App</Link> </NavbarBrand>
+        >The App Gallery</Link> </NavbarBrand>
         <NavbarText className="text-white">{
             context.user?.email? context.user.email:""
         }</NavbarText>
+        
         <NavbarToggler onClick ={toggle}/>
         <Collapse  isOpen={isOpen} navbar>
-
+        
         <Nav className="ml-auto " navbar>
             {
                 context.user?(
                     <NavItem>
                     <NavLink onClick={() =>{
                         context.setUser(null);
-                    }}  className="text-white">LogOut</NavLink>
+                    }}  className="text-white offset-lg-3">LogOut</NavLink>
                     </NavItem>
                 ) : (
                 <>

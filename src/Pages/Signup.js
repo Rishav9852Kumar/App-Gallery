@@ -19,6 +19,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {UserContext} from "../context/UserContext";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
+import background from '../Gallery/background.jpeg';
 const Signup=()=>{
     const context =useContext(UserContext);
     const [email,setEmail]=useState("");
@@ -49,9 +50,14 @@ const Signup=()=>{
         return <Navigate to="/" />
     }
     return(
+      <div style={{ backgroundImage: `url(${background})` 
+      ,height:"85vh"
+      ,backgroundSize:"cover",backgroundPosition:"center",backgroundRepeat:"repeat"}}>
+
+    
         <Container className="text-center">
       <Row>
-        <Col lg={6} className="offset-lg-3 mt-5">
+        <Col lg={6} className="offset-lg-3 mt-4">
           <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
             <Form onSubmit={handleSubmit}>
               <CardHeader className="">Signup here</CardHeader>
@@ -97,6 +103,7 @@ const Signup=()=>{
         </Col>
       </Row>
     </Container>
+    </div>
     )
 }
 export default Signup;

@@ -28,6 +28,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //firebase stuff
 import { initializeApp } from 'firebase/app';
 
+
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAOdrG4_6xUyc6-rwXXmmpXdzRgSxdZJtM",
@@ -45,8 +46,10 @@ const app = initializeApp(firebaseConfig);
 const  App = () => {
 
   const  [user,setUser]=useState(null);
+ 
   return (
-      <Router>
+ 
+        <Router >
      <ToastContainer/>
      <UserContext.Provider value={{user,setUser}}>
        <Header/>
@@ -61,8 +64,9 @@ const  App = () => {
      <Footer/> 
      </UserContext.Provider>
    </Router>
-    
-  
+   
+   
+
   );
 }
 

@@ -14,11 +14,15 @@ import {
     CardHeader
 }  from 'reactstrap';
 import firebase from "firebase/app";
+
 import "firebase/auth";
 import { getAuth, signInWithEmailAndPassword  } from "firebase/auth";
 import {UserContext} from "../context/UserContext";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
+// import music from "../Gallery/music.mp3"
+import background from '../Gallery/background.jpeg';
+
 const Signup=()=>{
     const context =useContext(UserContext);
     const [email,setEmail]=useState("");
@@ -49,9 +53,14 @@ const Signup=()=>{
         return <Navigate to="/" />
     }
     return(
-        <Container className="text-center">
+      <div style={{ backgroundImage: `url(${background})` 
+      ,height:"85vh"
+      ,backgroundSize:"cover",backgroundPosition:"center",backgroundRepeat:"repeat"}}>
+        <Container className="text-center" >
+          {/*  <audio src={music} controls  autostart="autostart" className="float-right"/>  */}
       <Row>
-        <Col lg={6} className="offset-lg-3 mt-5">
+       
+        <Col lg={6} className="offset-lg-3 mt-4">
           <Card body inverse color="primary"> 
             <Form onSubmit={handleSubmit}>
               <CardHeader className="">Signin here</CardHeader>
@@ -65,7 +74,7 @@ const Signup=()=>{
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="provide your email"
+                      placeholder="guest@123.gmail.com"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                     />
@@ -80,7 +89,7 @@ const Signup=()=>{
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="your password here"
+                      placeholder="guest@123"
                       value={password}
                       onChange={e => setPassword(e.target.value)}
                     />
@@ -97,6 +106,7 @@ const Signup=()=>{
         </Col>
       </Row>
     </Container>
+    </div>
     )
 }
 export default Signup;
