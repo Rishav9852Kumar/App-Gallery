@@ -21,14 +21,12 @@ const Header = () => {
 
     const toggle = () => setIsOpen(!isOpen);
     return(
-        <Navbar color="info" light expand="md" >
+        <Navbar color="info" light expand="md" className="container-fluid">
      
       
         <NavbarBrand><Link to="/" className="text-white"
         >The App Gallery</Link> </NavbarBrand>
-        <NavbarText className="text-white">{
-            context.user?.email? context.user.email:""
-        }</NavbarText>
+       
         
         <NavbarToggler onClick ={toggle}/>
         <Collapse  isOpen={isOpen} navbar>
@@ -36,19 +34,24 @@ const Header = () => {
         <Nav className="ml-auto " navbar>
             {
                 context.user?(
-                    <NavItem>
+                    <>
+                    <NavbarText className="text-white">{
+                        context.user?.email? context.user.email:""
+                    }</NavbarText>
+                    <NavItem className="float-end">
                     <NavLink onClick={() =>{
                         context.setUser(null);
-                    }}  className="text-white offset-lg-3">LogOut</NavLink>
+                    }}  className="text-white offset-lg-3 navbar-end ">LogOut</NavLink>
                     </NavItem>
+                    </>
                 ) : (
                 <>
-                    <NavItem>
-                    <NavLink tag={Link} to="/signup" className="text-white">
+                    <NavItem >
+                    <NavLink tag={Link} to="/signup" className="text-white ">
                         Signup 
                     </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem >
                     <NavLink tag={Link} to="/signin" className="text-white">
                         Signin </NavLink>
                     </NavItem>
