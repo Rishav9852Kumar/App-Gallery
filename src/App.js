@@ -16,6 +16,7 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Github from './Pages/GithubProfile';
 import News from './Pages/News';
+import Newpage1 from './Pages/Newpage1';
 // react-router
 
 import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
@@ -58,7 +59,8 @@ const  App = () => {
      <Route exact path="/github" element={<Github/>}/>
        <Route exact  path="/signin" element={<Signin/>}/>
        <Route exact path="/signup" element={<Signup/>}/>
-       <Route exact path="news" element={<News/>}/>
+       <Route exact path="/news" element={<News/>}/>
+       <Route exact path="/newpage1" element={<Newpage1/>}/>
        <Route exact path="*" element={<PageNotFound/>}/>
      </Routes>
      <Footer/> 

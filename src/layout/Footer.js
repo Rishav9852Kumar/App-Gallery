@@ -7,9 +7,10 @@ const Footer =() =>{
         <Container
         fluid
         tag="footer"
-        className="text-center bg-info text-white text-uppercase fixed-bottom pb-2 ">
+        className="text-center bg-primary text-white text-uppercase fixed-bottom pb-2 ">
+       
         My project collection 
-        <audio src={music} controls  autostart="autostart" className="float-end"/>
+        {/* <audio src={music} controls  autostart="autostart" className="float-end"/> */}
         </Container>
     );
 }

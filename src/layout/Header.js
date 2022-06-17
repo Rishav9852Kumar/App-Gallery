@@ -21,7 +21,7 @@ const Header = () => {
 
     const toggle = () => setIsOpen(!isOpen);
     return(
-        <Navbar color="info" light expand="md" className="container-fluid">
+        <Navbar color="primary" light expand="md" className="container-fluid is-italic">
      
       
         <NavbarBrand><Link to="/" className="text-white"

@@ -12,6 +12,7 @@ import { UserContext } from "../context/UserContext";
 import Tools from "../components/Tools";
 import news from "../Gallery/images.jpg";
 import github from "../Gallery/download.jpg";
+
 const Home=()=>{
     const context =useContext(UserContext)
   
@@ -27,7 +28,7 @@ const Home=()=>{
             <Tools text="Github Progile Generator" imgURL={github} link="/github" desc="You can get any company/Group/individual's presonal details, repo details with most used language and links to projects "/>
             </Col>
             <Col>
-            <Tools text="Animal Predictor " imgURL="https://mdbootstrap.com/img/new/standard/city/041.webp" link="/animal" desc=".."/>
+            <Tools text="Animal Predictor " imgURL="https://mdbootstrap.com/img/new/standard/city/041.webp" link="/newpage1" desc=".."/>
             </Col>
             <Col>
             <Tools text="News Updates " imgURL={news} link="/news" desc="Here you can get all current and trending news/articles and reports along with tag specific search "/>
