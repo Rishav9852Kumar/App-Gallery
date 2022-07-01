@@ -55,13 +55,13 @@ const Signup=()=>{
       ,backgroundSize:"cover",backgroundPosition:"center",backgroundRepeat:"repeat"}}>
 
     
-        <Container className="text-center">
+        <Container className="text-center" >
       <Row>
         <Col lg={6} className="offset-lg-3 mt-4">
-          <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+          <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }} >
             <Form onSubmit={handleSubmit}>
-              <CardHeader className="">Signup here</CardHeader>
-              <CardBody>
+              <CardHeader  id="t">Signup here</CardHeader>
+              <CardBody   id="signup">
                 <FormGroup row>
                   <Label for="email" sm={3}>
                     Email

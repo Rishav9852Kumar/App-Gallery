@@ -11,7 +11,8 @@ import {
     Card,
     CardBody,
     CardFooter,
-    CardHeader
+    CardHeader,
+    ListGroupItemHeading
 }  from 'reactstrap';
 import firebase from "firebase/app";
 
@@ -21,6 +22,7 @@ import {UserContext} from "../context/UserContext";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
 // import music from "../Gallery/music.mp3"
+
 import background from '../Gallery/background.jpeg';
 
 const Signup=()=>{
@@ -61,11 +63,11 @@ const Signup=()=>{
       <Row>
        
         <Col lg={6} className="offset-lg-3 mt-4">
-          <Card body inverse color="primary"> 
+          <Card body inverse  id="signin"> 
             <Form onSubmit={handleSubmit}>
-              <CardHeader className="">Signin here</CardHeader>
-              <CardBody>
-                <FormGroup row>
+              <CardHeader id="t2">Signin here</CardHeader>
+              <CardBody id="t3">
+                <FormGroup row >
                   <Label for="email" sm={3}>
                     Email
                   </Label>
@@ -97,7 +99,7 @@ const Signup=()=>{
                 </FormGroup>
               </CardBody>
               <CardFooter>
-                <Button type="submit" block color="secondary">
+                <Button type="submit" block id="btlogin">
                   Sign In
                 </Button>
               </CardFooter>

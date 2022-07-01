@@ -16,17 +16,22 @@ const Repos =({repos_url}) =>{
   },[repos_url]);
 
   return(
+   
       <ListGroup className="mb-5 ml-1">
           {repos.map(repo =>(
-              <ListGroupItem key ={repo.id}>
-                  <div className="text-secondary"><b>{repo.name}</b></div>
+           
+                 <ListGroupItem key ={repo.id} className="repos">
+                
+                <div className="text-secondary" ><b>{repo.name}</b></div>
                   <div className="text-warning">{repo.language}</div>
                   <div className="text-info">{repo.description}</div>
                   <a className="text-primary" href={repo.html_url} target="_blank" rel="noopener noreferrer"><b> see </b></a>
-                  
               </ListGroupItem>
+         
+             
           ))}
       </ListGroup>
+     
   );
 };
 

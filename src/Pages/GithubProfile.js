@@ -55,7 +55,7 @@ const Github=()=>{
               </InputGroup>
               {user? <UserCard user={user}/>:null}
             </Col>
-            <Col md="7">{user ? <Repos repos_url={user.repos_url}/>: null}</Col>
+            <Col md="7" >{user ? <Repos repos_url={user.repos_url} />: null}</Col>
           </Row>
         </Container>
       );

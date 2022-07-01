@@ -1,1 +1,40 @@
+#signin{
+    background-color: #093d20 !important;
+    text-shadow: 2px 2px 4px #000000;
+}
+#signup{
+    background-color: rgb(68, 73, 68) !important;
+    text-shadow: 2px 2px 4px #000000;
+}
+#t{
+    text-shadow: 2px 2px 4px #000000;
+    background-color: #555050 !important;
+    margin-bottom: 1pc;
+}
+#t2{
+    background-color: rgb(38, 112, 57) !important;
+    margin-bottom: 1pc;
+}
+#t3{
+    background-color: rgb(38, 112, 57) !important;
+}
+#btlogin{
+    background-color: rgb(50, 250, 93);
+   
+}
+.apps :hover{
+    transform:  scale(1.03);
+    
+  /* zoom in */
+  transition: all .4s ease;
+  cursor: pointer;
+  border-radius: 12px !important;
+ 
+}
+.repos{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+}
+
 
