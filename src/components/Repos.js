@@ -13,7 +13,7 @@ const Repos =({repos_url}) =>{
 
   useEffect(() => {
     fetchRepos();
-  },[repos_url])
+  },[repos_url]);
 
   return(
       <ListGroup className="mb-5 ml-1">
