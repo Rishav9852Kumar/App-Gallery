@@ -1,4 +1,6 @@
 import React,{useState,useContext} from "react"
+import { BsFillPersonPlusFill,BsPersonFill} from 'react-icons/bs';
+import { FiUnlock} from 'react-icons/fi';
 import {
     Container,
     Form,
@@ -20,7 +22,7 @@ import "firebase/auth";
 import { getAuth, signInWithEmailAndPassword  } from "firebase/auth";
 import {UserContext} from "../context/UserContext";
 import {Navigate} from "react-router-dom";
-import {toast} from "react-toastify";
+import {Icons, toast} from "react-toastify";
 // import music from "../Gallery/music.mp3"
 
 import background from '../Gallery/background.jpeg';
@@ -47,6 +49,12 @@ const Signup=()=>{
     // ..
   });
     };
+    const defaultlogin=()=>{
+      setEmail("guest@123.gmail.com");
+      setPassword("guest@123");
+      handleSubmit();
+
+    }
     const handleSubmit = e =>{
         e.preventDefault()
         handleSignin()
@@ -65,25 +73,34 @@ const Signup=()=>{
         <Col lg={6} className="offset-lg-3 mt-4">
           <Card body inverse  id="signin"> 
             <Form onSubmit={handleSubmit}>
-              <CardHeader id="t2">Signin here</CardHeader>
+              <CardHeader id="t2" className="" >
+              Signin here  
+              <FiUnlock  onClick={defaultlogin} className=" ml-auto" size={30} /> 
+            
+              </CardHeader>
+              
               <CardBody id="t3">
-                <FormGroup row >
+                <FormGroup row > 
+                
                   <Label for="email" sm={3}>
-                    Email
+                 
+                    Email   
                   </Label>
                   <Col sm={9}>
                     <Input
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="guest@123.gmail.com"
+                      placeholder="provide your email"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                     />
+                   
                   </Col>
                 </FormGroup>
                 <FormGroup row>
                   <Label for="password" sm={3}>
+                 
                     Password
                   </Label>
                   <Col sm={9}>
@@ -91,7 +108,7 @@ const Signup=()=>{
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="guest@123"
+                      placeholder="provide your password"
                       value={password}
                       onChange={e => setPassword(e.target.value)}
                     />
