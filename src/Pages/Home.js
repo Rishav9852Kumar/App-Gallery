@@ -27,7 +27,7 @@ const Home=()=>{
             <Col >
             <Tools text="Github Progile Generator" imgURL={github} link="/github" desc="You can get any company/Group/individual's presonal details, repo details with most used language and links to projects "/>
             
-            <Tools text="Animal Predictor " imgURL="https://repository-images.githubusercontent.com/300838341/14d2d900-d9e6-11eb-9456-7bec7042c083" link="/randomquotes" desc="Sometimes some words can cause significanct change in someone's character"/>
+            <Tools text="Quotes-Pedia " imgURL="https://repository-images.githubusercontent.com/300838341/14d2d900-d9e6-11eb-9456-7bec7042c083" link="/randomquotes" desc="Quotes by famous presonalities are a good way to prove your point in any discussion or to showcase your knowledge of literature "/>
             </Col>
             
             <Col>
@@ -37,7 +37,7 @@ const Home=()=>{
             </Col>
             
             <Col>
-            <Tools text="Bank Atm " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage" desc=". . . . . . . . . . . "/>
+            <Tools text="testing page 2 " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
             
             <Tools text="Bank Atm " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage" desc=". . . . . . . . . . . "/>
             </Col>

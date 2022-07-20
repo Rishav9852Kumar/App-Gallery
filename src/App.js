@@ -18,6 +18,7 @@ import Github from './Pages/GithubProfile';
 import News from './Pages/News';
 import RandomQuotes from './Pages/RandomQuotes';
 import Testingpage from './Pages/Testingpage.js';
+import Testingpage2 from './Pages/Testingpage2.js';
 // react-router
 
 import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
@@ -63,6 +64,7 @@ const  App = () => {
        <Route exact path="/news" element={<News/>}/>
        <Route exact path="/randomquotes" element={<RandomQuotes/>}/>
        <Route exact path="/testingpage" element={<Testingpage/>}/>
+       <Route exact path="/testingpage2" element={<Testingpage2/>}/>
        <Route exact path="*" element={<PageNotFound/>}/>
      </Routes>
      <Footer/> 

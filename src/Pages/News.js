@@ -91,10 +91,6 @@ const News=()=>{
         <Container className="mb-4">
            <p className="title is-family-code"> News shorts</p>
               
-              
-              
-             
-              
           <Row className=" mt-4">
             <Col md="5">
               <InputGroup>
