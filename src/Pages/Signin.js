@@ -1,5 +1,4 @@
 import React,{useState,useContext} from "react"
-import { BsFillPersonPlusFill,BsPersonFill} from 'react-icons/bs';
 import { FiUnlock} from 'react-icons/fi';
 import {
     Container,
@@ -14,15 +13,15 @@ import {
     CardBody,
     CardFooter,
     CardHeader,
-    ListGroupItemHeading
+    
 }  from 'reactstrap';
-import firebase from "firebase/app";
+// import firebase from "firebase/app";
 
 import "firebase/auth";
 import { getAuth, signInWithEmailAndPassword  } from "firebase/auth";
 import {UserContext} from "../context/UserContext";
 import {Navigate} from "react-router-dom";
-import {Icons, toast} from "react-toastify";
+import {toast} from "react-toastify";
 // import music from "../Gallery/music.mp3"
 
 import background from '../Gallery/background.jpeg';
@@ -51,7 +50,7 @@ const Signup=()=>{
     };
     const defaultlogin=()=>{
       setEmail("guest@123.gmail.com");
-      setPassword("guest@123");
+      setPassword("Strong@123");
       handleSubmit();
 
     }
