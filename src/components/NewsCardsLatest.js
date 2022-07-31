@@ -10,20 +10,18 @@ const Newss =({user}) =>{
        <div class="box mb-1">
   <article class="media">
     <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/>
+      <figure class="image image is-128x128">
+        <img src={user.urlToImage}alt="Image"/>
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
-        <p>
-          <strong>{user.webTitle}</strong><br/> <small>{user.webPublicationDate}</small> <br/><small><a href={user.webUrl} target="blank">Link</a></small>
+       
+          <strong>{user.title}</strong><br/> <small>{user.description}</small> <br/><small class="text-muted">Last updated  {user.publishedAt} <a href={user.url} target="blank">_ Live</a></small>
           <br/>
-          
-        </p>
       </div>
       <nav class="level is-mobile">
-        <div class="level-left">
+        <div class="level-right">
           <a class="level-item" aria-label="reply">
             <span class="icon is-small">
               <i class="fas fa-reply" aria-hidden="true"></i>

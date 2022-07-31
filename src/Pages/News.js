@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext ,useEffect} from "react";
 import Axios from "axios";
 
 import {
@@ -16,26 +16,41 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import Newss from "../components/NewsCards";
+import Newssl from "../components/NewsCardsLatest";
 const News=()=>{
    
     const context =useContext(UserContext)
     const [query,setQuery] =useState("")
-    const [user,setUser] =useState(null)
+    const [user,setUser] =useState(null);
+    const [headlines,setHeadlines] =useState(null);
     const [page, setPage] = useState(1);
-    const fetchDefault =async() =>{
+    const fetchDefaultHeadlines =async() =>{
         {console.log(page);}
         try{
           
-          const {data} = await Axios.get(`https://content.guardianapis.com/search?page=${page}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb`);
-        
+          const {data} = await Axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=c9f9bc479cc1448d9987963e747c2f26`);
          
-          setUser(data);
-          console.log({ data });
+          setHeadlines(data);
+          console.log( {data});
         }catch(error)
         {
            toast("Not able to find the topic ",{type:"error"});  
         }
     };
+    const fetchDefault =async() =>{
+      {console.log(page);}
+      try{
+        
+        const {data} = await Axios.get(`https://content.guardianapis.com/world?page=${page}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb`);
+      
+       
+        setUser(data);
+        console.log({ data });
+      }catch(error)
+      {
+         toast("Not able to find the topic ",{type:"error"});  
+      }
+  };
     const fetchDetails =async() =>{
        {console.log(page);}
         try{
@@ -61,7 +76,7 @@ const News=()=>{
        }
     } 
     const getprevpage =async()=>{
-       if(page!=1) {
+       if(page>1) {
         setPage(page-1);
        if(query=="")
        {
@@ -79,8 +94,11 @@ const News=()=>{
       fetchDefault();
       setQuery("");
        
-       
     }
+    useEffect(() => {
+      alldefault();
+      fetchDefaultHeadlines();
+   },[]);
     //put any page behind login//
     if(!context.user?.uid)
     {
@@ -88,11 +106,11 @@ const News=()=>{
     }
     return (
         
-        <Container className="mb-4">
+        <Container className="mb-2">
            <p className="title is-family-code"> News shorts</p>
               
           <Row className=" mt-4">
-            <Col md="5">
+            <Col md="4">
               <InputGroup>
                 <Input className="input is-rounded input is-small  is-loading input is-primary "
                   type="text"
@@ -111,31 +129,36 @@ const News=()=>{
   <button class="button is-warning is-light">Warning</button>
   <button class="button is-primary is-light">Primary</button>
   <button class="button is-link is-light">Link</button>
-  <button onClick={alldefault} className="button is-danger is-light">Refresh</button>
+  <Button outline color="info" onClick={alldefault}>Refresh  </Button>
 </div>
-       
-
-              
-              
-              <Button outline color="info" onClick={getnextpage}>Page.no :  {user?.response.currentPage}  </Button>
+      
               <div>
-                  {fetchDefault}
                  
-
                 </div>
-            </Col>
-            <Col md="" > <h1 className="is-uppercase has-text-weight-semibold">OrderBy: {user?.response?.orderBy}</h1>
-            {/* the page no links  */}
- <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
+                <h5 className="is-uppercase has-text-weight-semibold">Ordered By: Relevence</h5>
+                <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
   <button onClick={getprevpage} className="pagination-previous " title="This is the first page">prev</button>
   <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
   <button onClick={getnextpage} className="pagination-next">next</button>
-  
 </nav>   
                     {user?.response?.results.map(result => (
                         <Newss key={result.id} user={result} />
                         
-                    ))}</Col>
+                    ))}
+            </Col>
+            <Col md="" > 
+            <h2 className="is-uppercase has-text-weight-semibold ">Top Headlines</h2>
+                <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
+  <button onClick={getprevpage} className="pagination-previous " title="This is the first page">prev</button>
+  <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
+  <button onClick={getnextpage} className="pagination-next">next</button>
+</nav>   
+                {headlines?.articles.map(result => (
+                  <Newssl key={result} user={result} />
+                  
+              ))}
+                    
+                    </Col>
           </Row>
         </Container>
       );
