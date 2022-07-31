@@ -17,6 +17,7 @@ import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import Newss from "../components/NewsCards";
 import Newssl from "../components/NewsCardsLatest";
+import Newstest from "../components/NewsCardsLatesttest";
 const News=()=>{
    
     const context =useContext(UserContext)
@@ -28,7 +29,7 @@ const News=()=>{
         {console.log(page);}
         try{
           
-          const {data} = await Axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=c9f9bc479cc1448d9987963e747c2f26`);
+          const {data} = await Axios.get(`https://newsdata.io/api/1/news?apikey=pub_97776e46c9f98699cb4593e514b06ea64cac&language=en&category=politics,world,technology&country=in,us&page=1`);
          
           setHeadlines(data);
           console.log( {data});
@@ -141,10 +142,11 @@ const News=()=>{
   <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
   <button onClick={getnextpage} className="pagination-next">next</button>
 </nav>   
-                    {user?.response?.results.map(result => (
-                        <Newss key={result.id} user={result} />
-                        
-                    ))}
+
+{user?.response?.results.map(result => (
+  <Newss key={result.id} user={result} />
+  
+))}
             </Col>
             <Col md="" > 
             <h2 className="is-uppercase has-text-weight-semibold ">Top Headlines</h2>
@@ -153,10 +155,10 @@ const News=()=>{
   <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
   <button onClick={getnextpage} className="pagination-next">next</button>
 </nav>   
-                {headlines?.articles.map(result => (
-                  <Newssl key={result} user={result} />
-                  
-              ))}
+{headlines?.results.map(result => (
+  <Newstest key={result} user={result} />
+  
+))}
                     
                     </Col>
           </Row>
