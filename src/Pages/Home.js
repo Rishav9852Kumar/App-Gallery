@@ -37,7 +37,7 @@ const Home=()=>{
             </Col>
             
             <Col>
-            <Tools text="testing page 2 " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
+            <Tools text="testing page " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
             
             <Tools text="Bank Atm " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage" desc=". . . . . . . . . . . "/>
             </Col>
