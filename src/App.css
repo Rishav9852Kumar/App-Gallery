@@ -6,6 +6,30 @@
     background-color: rgb(68, 73, 68) !important;
     text-shadow: 2px 2px 4px #000000;
 }
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
 #t{
     text-shadow: 2px 2px 4px #000000;
     background-color: #555050 !important;

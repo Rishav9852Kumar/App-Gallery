@@ -44,7 +44,12 @@ const Header = () => {
                         context.user?.email? context.user.email:""
                     } </NavbarText>
                     <NavItem className="float-end">
-                    <NavLink onClick={() =>{
+                    <NavLink 
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    title="To Log out "
+                    onClick={() =>{
+                        
                         context.setUser(null);
                     }}  className="text-white offset-lg-3 navbar-end "><IoIosLogOut size={30}/></NavLink>
                     </NavItem>
@@ -52,12 +57,18 @@ const Header = () => {
                 ) : (
                 <>
                     <NavItem >
-                    <NavLink tag={Link} to="/signup" className="text-white ">
+                    <NavLink tag={Link} to="/signup" className="text-white ml-auto"
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    title="To sign up as new user">
                         Signup 
                     </NavLink>
                     </NavItem>
                     <NavItem >
-                    <NavLink tag={Link} to="/signin" className="text-white">
+                    <NavLink tag={Link} to="/signin" className="text-white ml-auto"
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    title="Login to existing account">
                         Signin </NavLink>
                     </NavItem>
                 </>
