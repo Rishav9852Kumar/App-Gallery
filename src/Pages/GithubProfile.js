@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import Axios from "axios";
 
 import {
@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 
 const Github=()=>{
     const context =useContext(UserContext)
-    const [query,setQuery] =useState("")
+    const [query,setQuery] =useState("google")
     const [user,setUser] =useState(null)
 
     const fetchDetails =async() =>{
@@ -32,6 +32,9 @@ const Github=()=>{
            toast("Not able to locate User",{type:"error"});  
         }
     };
+    useEffect(() => {
+      fetchDetails();
+   },[]);
     //put any page behind login//
     if(!context.user?.uid)
     {

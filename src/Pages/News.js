@@ -42,7 +42,7 @@ const News=()=>{
       {console.log(page);}
       try{
         
-        const {data} = await Axios.get(`https://content.guardianapis.com/world?page=${page}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb`);
+        const {data} = await Axios.get(`https://content.guardianapis.com/world?page=${page}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb&page-size=13`);
       
        
         setUser(data);
@@ -56,7 +56,7 @@ const News=()=>{
        {console.log(page);}
         try{
           
-          const {data} = await Axios.get(`https://content.guardianapis.com/search?page=${page}&q=${query}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb`);
+          const {data} = await Axios.get(`https://content.guardianapis.com/search?page=${page}&q=${query}&api-key=a200c175-5024-4bcb-8e9c-101e5399d1fb&page-size=13`);
         
         
           setUser(data);
@@ -76,6 +76,7 @@ const News=()=>{
             fetchDetails();
        }
     } 
+ 
     const getprevpage =async()=>{
        if(page>1) {
         setPage(page-1);
@@ -96,8 +97,35 @@ const News=()=>{
       setQuery("");
        
     }
+    const sportsnews =async()=>{
+      setQuery("sports");
+      fetchDetails();
+      fetchDetails(); 
+   }
+   const politicsnews =async()=>{
+    setQuery("politics");
+    fetchDetails();
+    fetchDetails(); 
+ }
+ const fashionnews =async()=>{
+  setQuery("Fashion");
+  fetchDetails();
+  fetchDetails(); 
+}
+const financenews =async()=>{
+  setQuery("Finance");
+  fetchDetails();
+  fetchDetails(); 
+}
+const technologynews =async()=>{
+  setQuery("Technology");
+  fetchDetails();
+  fetchDetails(); 
+}
+
     useEffect(() => {
       alldefault();
+      fetchDefaultHeadlines();
       fetchDefaultHeadlines();
    },[]);
     //put any page behind login//
@@ -111,7 +139,7 @@ const News=()=>{
            <p className="title is-family-code"> News shorts</p>
               
           <Row className=" mt-4">
-            <Col md="4">
+            <Col md="5">
               <InputGroup>
                 <Input className="input is-rounded input is-small  is-loading input is-primary "
                   type="text"
@@ -125,31 +153,18 @@ const News=()=>{
                 </InputGroup>
                
 <div class="buttons mt-1">
-  <button class="button is-info is-light">Info</button>
-  <button class="button is-success is-light">Success</button>
-  <button class="button is-warning is-light">Warning</button>
-  <button class="button is-primary is-light">Primary</button>
-  <button class="button is-link is-light">Link</button>
+  <button class="button is-info is-light"onClick={sportsnews} >Sports</button>
+  <button class="button is-success is-light" onClick={technologynews}>Tech</button>
+  <button class="button is-warning is-light" onClick={politicsnews}>Politics</button>
+  <button class="button is-primary is-light" onClick={fashionnews}>Fashion</button>
+  <button class="button is-link is-light" onClick={financenews}>Finance</button>
   <Button outline color="info" onClick={alldefault}>Refresh  </Button>
 </div>
       
               <div>
                  
                 </div>
-                <h5 className="is-uppercase has-text-weight-semibold">Ordered By: Relevence</h5>
-                <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
-  <button onClick={getprevpage} className="pagination-previous " title="This is the first page">prev</button>
-  <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
-  <button onClick={getnextpage} className="pagination-next">next</button>
-</nav>   
-
-{user?.response?.results.map(result => (
-  <Newss key={result.id} user={result} />
-  
-))}
-            </Col>
-            <Col md="" > 
-            <h2 className="is-uppercase has-text-weight-semibold ">Top Headlines</h2>
+                <h5 className="is-uppercase has-text-weight-semibold ">Top Headlines</h5>
                 <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
   <button onClick={getprevpage} className="pagination-previous " title="This is the first page">prev</button>
   <button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
@@ -157,10 +172,27 @@ const News=()=>{
 </nav>   
 {headlines?.results.map(result => (
   <Newstest key={result} user={result} />
-  
+    // Here is the news api
 ))}
-                    
+
+            </Col>
+            <Col md="" > 
+           
+            <h2 className="is-uppercase has-text-weight-semibold">Ordered By: {query}</h2>
+            <nav class="pagination is-rounded is-small" role="navigation" aria-label="pagination">
+<button onClick={getprevpage} className="pagination-previous " title="This is the first page">prev</button>
+<button onClick={fetchDetails} className="pagination-previous "  title="This is the first page"> Current :{user?.response.currentPage}</button>
+<button onClick={getnextpage} className="pagination-next">next</button>
+</nav>   
+
+{user?.response?.results.map(result => (
+<Newss key={result.id} user={result} />
+
+))}
+           
+                   
                     </Col>
+                    
           </Row>
         </Container>
       );

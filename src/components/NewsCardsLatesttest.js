@@ -17,8 +17,8 @@ const Newstest =({user}) =>{
     <div class="media-content">
       <div class="content">
        
-          <strong>{user.title}</strong><br/> <small>{user.description}</small> <br/><small class="text-muted">Last updated  {user.pubDate} <a href={user.url} target="blank">_ Live</a></small>
-          <br/>
+          <strong>{user.title}</strong><br/>{/* <small>{user.description}</small> <br/>*/} <small class="text-muted">Last updated  {user.pubDate} <a href={user.url} target="blank">_ Live</a></small>
+          
       </div>
       <nav class="level is-mobile">
         <div class="level-right">
