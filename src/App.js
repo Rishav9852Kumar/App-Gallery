@@ -17,7 +17,7 @@ import Header from './layout/Header';
 import Github from './Pages/GithubProfile';
 import News from './Pages/News';
 import RandomQuotes from './Pages/RandomQuotes';
-import Testingpage from './Pages/Testingpage.js';
+import TicTacToe from './Pages/TicTacToe.js';
 import Testingpage2 from './Pages/Testingpage2.js';
 // react-router
 
@@ -65,7 +65,7 @@ const  App = () => {
        <Route exact path="/signup" element={<Signup/>}/>
        <Route exact path="/news" element={<News/>}/>
        <Route exact path="/randomquotes" element={<RandomQuotes/>}/>
-       <Route exact path="/testingpage" element={<Testingpage/>}/>
+       <Route exact path="/tictactoe" element={<TicTacToe/>}/>
        <Route exact path="/testingpage2" element={<Testingpage2/>}/>
        <Route exact path="*" element={<PageNotFound/>}/>
      </Routes>

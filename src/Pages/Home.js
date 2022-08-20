@@ -33,13 +33,13 @@ const Home=()=>{
             <Col>
             <Tools text="News Updates " imgURL={news} link="/news" desc="Here you can get all current and trending news/articles and reports along with tag specific search "/>
             
-            <Tools text="Movie Recommendation " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage" desc=". . . . . . . . . . . "/>
+            <Tools text="Movie Recommendation " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
             </Col>
             
             <Col>
-            <Tools text="testing page " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
+            <Tools text="TIC TAC TOE " imgURL="https://thumbs.dreamstime.com/b/tic-tac-toe-26431470.jpg" link="/tictactoe" desc='The name Tic Tac Toe or "Tit Tat Toe". Achieve 3 pieces in a line securing the winning combination '/>
             
-            <Tools text="Bank Atm " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage" desc=". . . . . . . . . . . "/>
+            <Tools text="Bank Atm " imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg" link="/testingpage2" desc=". . . . . . . . . . . "/>
             </Col>
           </Row>
         

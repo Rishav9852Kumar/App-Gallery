@@ -1,0 +1,23 @@
+
+  .grid {
+    
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
+  
+    grid-gap: 10px;
+  } 
+   
+  
+  #boxi {
+    width: auto;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon {
+    font-size: 15px;
+    color: #d5ddce;
+  }

@@ -86,7 +86,7 @@ const Signup = () => {
                   className=" ml-auto"
                   size={30}
                 />
-                 
+                 Guest login
                   
                 </CardHeader>
 
