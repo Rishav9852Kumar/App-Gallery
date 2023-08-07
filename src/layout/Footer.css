@@ -1,0 +1,18 @@
+footer{
+    display:flex;
+    color:rgb(248, 244, 244);
+}
+#footerlogo{
+    display:flex;
+    max-height: 5vh;
+    padding-right: 4px;
+}
+.footerCopyRight{
+    display: flex;
+    justify-content: center;
+    align-items: right;
+}
+.footerContent{
+    display: flex;
+    justify-content: center;
+}
