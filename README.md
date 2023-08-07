@@ -2,4 +2,4 @@
 # Unique Visitors: ![](https://visitor-badge.laobi.icu/badge?page_id=Rishav9852Kumar/App-Gallery)
 # My Followers: [![Github](https://img.shields.io/github/followers/Rishav9852Kumar?label=Follow&style=social)](https://github.com/Rishav9852Kumar)
 ## [Live](https://github-profile-generator-007.netlify.app)
-#### [FrontEnd Dev Course](https://frontendmasters.com/cours)
+#### [Development Courses](https://frontendmasters.com/courses/)
