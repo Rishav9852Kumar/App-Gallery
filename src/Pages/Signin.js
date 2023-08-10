@@ -77,17 +77,16 @@ const Signup = () => {
               <Form onSubmit={handleSubmit}>
                 <CardHeader id="t2" className="">
                   Signin here
-                <FiUnlock
-                  class=" ml-auto"
+                  <FiUnlock
+                    class=" ml-auto"
                     data-toggle="tooltip"
                     data-placement="right"
                     title="To Login as Guest Click Here"
-                  onClick={defaultlogin}
-                  className=" ml-auto"
-                  size={30}
-                />
-                 Guest login
-                  
+                    onClick={defaultlogin}
+                    className=" ml-auto"
+                    size={30}
+                  />
+                  Guest login
                 </CardHeader>
 
                 <CardBody id="t3">

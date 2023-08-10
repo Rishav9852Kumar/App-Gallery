@@ -16,7 +16,7 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Github from './Pages/GithubProfile';
 import News from './Pages/News';
-import RandomQuotes from './Pages/RandomQuotes';
+import RandomQuotes from './QuotesGenerator/RandomQuotes';
 import TicTacToe from './Pages/TicTacToe.js';
 import Testingpage2 from './Pages/Testingpage2.js';
 // react-router
