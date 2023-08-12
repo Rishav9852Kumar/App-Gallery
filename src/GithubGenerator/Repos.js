@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { ListGroup, ListGroupItem } from "reactstrap";
+import "./GithubGenerator.css";
 
 const Repos = ({ repos_url }) => {
   const [repos, setRepos] = useState([]);

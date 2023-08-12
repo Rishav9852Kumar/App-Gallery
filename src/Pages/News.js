@@ -7,7 +7,6 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import Newss from "../components/NewsCards";
-import Newssl from "../components/NewsCardsLatest";
 import Newstest from "../components/NewsCardsLatesttest";
 const News = () => {
   const context = useContext(UserContext);
@@ -122,7 +121,13 @@ const News = () => {
   }
   return (
     <Container className="mb-2">
-      <p className="title is-family-code"> News shorts</p>
+      <div class="container" id="quote-container">
+        <div id="centered-heading">
+          <h1 class="heading" id="QuoteTitle">
+            News Shorts
+          </h1>
+        </div>
+      </div>
 
       <Row className=" mt-4">
         <Col md="5">

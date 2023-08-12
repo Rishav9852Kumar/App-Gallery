@@ -2,49 +2,72 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import ThemeContext from "../TicTacToeContext/ThemeContext";
 import AppTheme from "../Colors";
-const Hero = () => {
+const Hero = ({ onResetGame }) => {
   const [themeMode, setThemeMode] = useContext(ThemeContext);
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
   const themeHook = useState("light");
+
+    const handleChangeBackgroundColor = () => {
+      // Simulate an action that triggers game reset on the first click
+      const num = Math.random();
+      if (num > 0.5) {
+        onResetGame();
+      } else {
+        setThemeMode(themeMode === "light" ? "dark" : "light");
+      }
+    };
+
   return (
     <div
       id="borderes"
       style={{
-        padding: "1rem",
         backgroundColor: `${currentTheme.backgroundColor}`,
         color: `${currentTheme.textColor}`,
         textAlign: "center",
       }}
     >
-      <h1
-        style={{
-          textAlign: "center",
-          padding: "0px",
-          fontSize: "40px",
-          fontWeight: "bold",
-          color: "#ff0000",
-          fontFamily: "cursive",
-        }}
-      >
-        Tic Tac Toe Game{" "}
-      </h1>
-      <p>To change the background</p>
+      <div class="container" id="quote-container">
+        <div id="centered-heading">
+          <h1 class="heading" id="QuoteTitle">
+            Tic Tac Toe X-O
+          </h1>
+        </div>
+      </div>
       <button
         onClick={() => {
           setThemeMode(themeMode === "light" ? "dark" : "light");
         }}
         style={{
-          backgroundColor: `${
-            themeHook[0] === "light" ? "#ffd83d" : "#f7f179"
-          }`,
-          padding: "10px 100px",
-          fontSize: "10px",
-          color: `${themeHook[0] === "light" ? "black" : "red"}`,
+          backgroundColor: `${themeHook[0] === "light" ? "grey	" : "black"}`,
+          fontSize: "20px",
+          margin: "20px",
+          padding: "10px",
+          fontWeight: "bold",
+          fontFamily: "cursive",
+          color: "white",
           border: `${currentTheme.border}`,
         }}
       >
-        Click Me
+        Change Background
+      </button>
+      <button
+        onClick={() => {
+          onResetGame();
+          handleChangeBackgroundColor();
+        }}
+        style={{
+          backgroundColor: `${themeHook[0] === "light" ? "grey	" : "black"}`,
+          fontSize: "20px",
+          margin: "20px",
+          padding: "10px",
+          fontWeight: "bold",
+          fontFamily: "cursive",
+          color: "white",
+          border: `${currentTheme.border}`,
+        }}
+      >
+        Reset The Game
       </button>
     </div>
   );

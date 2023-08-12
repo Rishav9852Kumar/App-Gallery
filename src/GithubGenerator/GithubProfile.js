@@ -3,11 +3,12 @@ import Axios from "axios";
 
 import { Row, Container, Col, Input, Button, InputGroup } from "reactstrap";
 
-import UserCard from "../components/UserCard";
-import Repos from "../components/Repos";
+import UserCard from "./UserCard";
+import Repos from "./Repos";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
+import "./GithubGenerator.css";
 
 const Github = () => {
   const context = useContext(UserContext);
@@ -32,7 +33,13 @@ const Github = () => {
   }
   return (
     <Container className="mb-5">
-      <h3>Github Profile Generator </h3>
+      <div class="container" id="quote-container">
+        <div id="centered-heading">
+          <h1 class="heading" id="QuoteTitle">
+            Github Profile Generator
+          </h1>
+        </div>
+      </div>
       <Row className=" mt-4">
         <Col md="5">
           <InputGroup>

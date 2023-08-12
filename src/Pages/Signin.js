@@ -27,8 +27,8 @@ import background from "../Gallery/background.jpeg";
 
 const Signup = () => {
   const context = useContext(UserContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("guest@123.gmail.com");
+  const [password, setPassword] = useState("Strong@123");
 
   const handleSignin = () => {
     const auth = getAuth();

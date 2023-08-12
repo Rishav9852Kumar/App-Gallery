@@ -1,15 +1,15 @@
 import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../TicTacToe/Styles.css";
-import Icon from "../TicTacToe/TicTacToeComponents/icons";
+import "./Styles.css";
+import Icon from "./TicTacToeComponents/icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Card, CardBody, Container, Button, Col, Row } from "reactstrap";
-import ThemeContext from "../TicTacToe/TicTacToeContext/ThemeContext";
-import Heading from "../TicTacToe/TicTacToeComponents/Heading";
-import Hero from "../TicTacToe/TicTacToeComponents/Hero";
+import ThemeContext from "./TicTacToeContext/ThemeContext";
 import { UserContext } from "../context/UserContext";
 import { Navigate } from "react-router-dom";
+import Hero from "./TicTacToeComponents/Hero";
+
 const itemArray = new Array(9).fill("empty");
 
 const TicTacToe = () => {
@@ -107,7 +107,8 @@ const TicTacToe = () => {
       }}
     >
       <ThemeContext.Provider value={themeHook}>
-        <Hero />
+        <Hero onResetGame={reloadGame} />
+        {/* It here helps in Passing the reloadGame function */}
       </ThemeContext.Provider>
       <Container className="p-3">
         <ToastContainer position="bottom-center" />
@@ -123,7 +124,12 @@ const TicTacToe = () => {
                 </Button>
               </div>
             ) : (
-              <h2 className="text-center text-warning">
+              <h2
+                className="text-center "
+                style={{
+                  color: `${themeHook[0] === "light" ? "black" : "white"}`,
+                }}
+              >
                 {isCross ? "Cross's " : "Circle's "} turns
               </h2>
             )}
