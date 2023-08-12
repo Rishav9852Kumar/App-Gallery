@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="text-center bg-primary text-white text-uppercase pb-1">
+    <div className="text-center bg-primary text-white text-uppercase pb-3">
       <footer class="footerCopyRight">
         <a href="https://github.com/Rishav9852Kumar/App-Gallery" target="blank">
           <div className="pl-2">
