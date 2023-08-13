@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
-const Newstest = ({ user }) => {
+const NewsHeadline = ({ user }) => {
   return (
     <div>
       {/* <h3 className="is-family-code">{user.webTitle}</h3><br/> */}
@@ -50,4 +50,4 @@ const Newstest = ({ user }) => {
   );
 };
 
-export default Newstest;
+export default NewsHeadline;

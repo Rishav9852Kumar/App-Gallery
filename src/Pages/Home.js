@@ -27,10 +27,10 @@ const Home = () => {
           />
 
           <Apps
-            text="Quotes-Pedia "
-            imgURL="https://repository-images.githubusercontent.com/300838341/14d2d900-d9e6-11eb-9456-7bec7042c083"
-            link="/randomquotes"
-            desc="Quotes by famous presonalities are a good way to prove your point in any discussion or to showcase your knowledge of literature "
+            text="TIC TAC TOE "
+            imgURL="https://thumbs.dreamstime.com/b/tic-tac-toe-26431470.jpg"
+            link="/tictactoe"
+            desc='The name Tic Tac Toe or "Tit Tat Toe". Achieve 3 pieces in a line securing the winning combination '
           />
         </Col>
 
@@ -52,12 +52,11 @@ const Home = () => {
 
         <Col>
           <Apps
-            text="TIC TAC TOE "
-            imgURL="https://thumbs.dreamstime.com/b/tic-tac-toe-26431470.jpg"
-            link="/tictactoe"
-            desc='The name Tic Tac Toe or "Tit Tat Toe". Achieve 3 pieces in a line securing the winning combination '
+            text="Quotes-Pedia "
+            imgURL="https://repository-images.githubusercontent.com/300838341/14d2d900-d9e6-11eb-9456-7bec7042c083"
+            link="/randomquotes"
+            desc="Quotes by famous presonalities are a good way to prove your point in any discussion or to showcase your knowledge of literature "
           />
-
           <Apps
             text="Bank Atm "
             imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg"

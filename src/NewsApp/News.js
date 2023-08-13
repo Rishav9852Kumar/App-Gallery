@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import Newss from "./NewsCards";
-import Newstest from "../components/NewsCardsLatesttest";
+import NewsHeadline from "./NewsHeadlines";
 const News = () => {
   const context = useContext(UserContext);
   const [query, setQuery] = useState("");
@@ -20,7 +20,7 @@ const News = () => {
     }
     try {
       const { data } = await Axios.get(
-        `https://newsdata.io/api/1/news?apikey=pub_97776e46c9f98699cb4593e514b06ea64cac&language=en&category=politics,world,technology&country=in,us&page=1`
+        `https://newsdata.io/api/1/news?apikey=pub_97776e46c9f98699cb4593e514b06ea64cac&language=en&category=top&country=in,us&q=${query}`
       );
 
       setHeadlines(data);
@@ -87,32 +87,30 @@ const News = () => {
   const sportsnews = async () => {
     setQuery("sports");
     fetchDetails();
-    fetchDetails();
+    fetchDefaultHeadlines();
   };
   const politicsnews = async () => {
     setQuery("politics");
     fetchDetails();
-    fetchDetails();
+    fetchDefaultHeadlines();
   };
   const fashionnews = async () => {
     setQuery("Fashion");
     fetchDetails();
-    fetchDetails();
+    fetchDefaultHeadlines();
   };
   const financenews = async () => {
     setQuery("Finance");
-    fetchDetails();
     fetchDetails();
   };
   const technologynews = async () => {
     setQuery("Technology");
     fetchDetails();
-    fetchDetails();
+    fetchDefaultHeadlines();
   };
 
   useEffect(() => {
     alldefault();
-    fetchDefaultHeadlines();
     fetchDefaultHeadlines();
   }, []);
   //put any page behind login//
@@ -133,7 +131,7 @@ const News = () => {
         <Col md="5">
           <InputGroup>
             <Input
-              className="input is-rounded input is-small  is-loading input is-primary "
+              className="input is-rounded is-small  is-loading is-primary "
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -168,37 +166,12 @@ const News = () => {
               Refresh{" "}
             </Button>
           </div>
-
-          <div></div>
-          <h5 className="is-uppercase has-text-weight-semibold ">
+          <h5 className="is-uppercase has-text-weight-semibold has-text-centered has-text-weight-bold	">
             Top Headlines
           </h5>
-          <nav
-            class="pagination is-rounded is-small"
-            role="navigation"
-            aria-label="pagination"
-          >
-            <button
-              onClick={getprevpage}
-              className="pagination-previous "
-              title="This is the first page"
-            >
-              prev
-            </button>
-            <button
-              onClick={fetchDetails}
-              className="pagination-previous "
-              title="This is the first page"
-            >
-              {" "}
-              Current :{user?.response.currentPage}
-            </button>
-            <button onClick={getnextpage} className="pagination-next">
-              next
-            </button>
-          </nav>
+
           {headlines?.results.map((result) => (
-            <Newstest key={result} user={result} />
+            <NewsHeadline key={result} user={result} />
             // Here is the news api
           ))}
         </Col>
