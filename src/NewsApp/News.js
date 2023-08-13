@@ -131,7 +131,7 @@ const News = () => {
         <Col md="5">
           <InputGroup>
             <Input
-              className="input is-rounded is-small  is-loading is-primary "
+              className=" is-rounded is-small  is-loading is-primary "
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -140,7 +140,6 @@ const News = () => {
             <Button
               onClick={fetchDetails}
               color="primary"
-              className="button is-small button is-rounded"
             >
               search
             </Button>
