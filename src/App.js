@@ -15,7 +15,7 @@ import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Github from './GithubGenerator/GithubProfile';
-import News from './Pages/News';
+import News from './NewsApp/News';
 import RandomQuotes from './QuotesGenerator/RandomQuotes';
 import TicTacToe from './TicTacToe/TicTacToe.js';
 import Testingpage2 from './Pages/Testingpage2.js';

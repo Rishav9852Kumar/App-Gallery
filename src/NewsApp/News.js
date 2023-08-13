@@ -6,7 +6,7 @@ import { Row, Container, Col, Input, Button, InputGroup } from "reactstrap";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
-import Newss from "../components/NewsCards";
+import Newss from "./NewsCards";
 import Newstest from "../components/NewsCardsLatesttest";
 const News = () => {
   const context = useContext(UserContext);

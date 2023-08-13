@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-const Tools = ({ text, imgURL, link, desc }) => {
+const Apps = ({ text, imgURL, link, desc }) => {
   return (
     <Container fluid>
       <NavLink tag={Link} to={link} className="apps">
@@ -27,4 +27,4 @@ const Tools = ({ text, imgURL, link, desc }) => {
     </Container>
   );
 };
-export default Tools;
+export default Apps;
