@@ -43,10 +43,10 @@ const Home = () => {
           />
 
           <Apps
-            text="Movie Recommendation "
-            imgURL="https://www.lawrenceprospera.org/images/quintana/Page_Under_Construction.jpg"
-            link="/testingpage2"
-            desc=". . . . . . . . . . . "
+            text="Movie Recommendation"
+            imgURL="https://manofmany.com/wp-content/uploads/2020/04/Veboli-new-2.jpg"
+            link="/movieRecommendator"
+            desc="Explore movie details effortlessly with search feature. Dive into plot summaries, cast details, and more. For a personalized experience, receive genre-based movie recommendations tailored to your preferences."
           />
         </Col>
 

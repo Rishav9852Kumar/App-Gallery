@@ -1,0 +1,48 @@
+.movieTitle {
+  font-size: 3rem;
+  text-align: center;
+  color: transparent;
+  background-image: linear-gradient(45deg, #ffd700, #ff69b4, #00ffff, #ff1493);
+  background-size: 200% 200%;
+  animation: gradientAnimation 4s ease infinite,
+    textColorAnimation 4s alternate-reverse infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 400% 400%;
+  }
+}
+@keyframes textColorAnimation {
+  0% {
+    color: #ffd700;
+  }
+  100% {
+    color: #ff1493;
+  }
+}
+.movieBackground {
+  background-size: cover;
+  height: 100vh;
+  background-image: url("https://wallpaperaccess.com/full/1562010.jpg");
+}
+.movie {
+  width: 90%;
+  height: 85%;
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background: linear-gradient(45deg, #1a1a1a 25%, transparent 25%) -10px 0,
+    linear-gradient(-45deg, #1a1a1a 25%, transparent 25%) -10px 0,
+    linear-gradient(45deg, transparent 75%, #1a1a1a 75%),
+    linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+  background-size: 20px 20px;
+  background-color: #111;
+  border-radius: 10px;
+  border-width: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
